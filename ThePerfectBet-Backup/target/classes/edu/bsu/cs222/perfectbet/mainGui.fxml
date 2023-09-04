@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="750.0" style="-fx-background-color: #8ecae6; -fx-border-radius: 6;" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.bsu.cs222.perfectbet.Controller.MainController">
+   <BorderPane prefHeight="500.0" prefWidth="750.0">
+      <top>
+         <VBox prefHeight="120.0" prefWidth="750.0" BorderPane.alignment="CENTER">
+            <HBox prefHeight="72.0" prefWidth="750.0">
+               <ImageView fitHeight="72.0" fitWidth="440.0" pickOnBounds="true" preserveRatio="true" translateY="3.0">
+                  <Image url="@header.png" />
+               </ImageView>
+            </HBox>
+            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+               <Label text="Select a Sport: " textFill="#023047" translateY="-2.0">
+                  <font>
+                     <Font name="Dubai Bold" size="22.0" />
+                  </font>
+               </Label>
+               <ChoiceBox fx:id="sports_cb" onAction="#onSportSelect" prefWidth="150.0" stylesheets="@style.css" translateY="-2.0" />
+            </HBox>
+            <Separator prefWidth="200.0" />
+         </VBox>
+      </top>
+      <left>
+         <VBox prefHeight="380.0" prefWidth="372.0" BorderPane.alignment="CENTER">
+            <HBox prefHeight="60.0" prefWidth="367.0">
+               <Label text="Team Selection" textFill="#023047" translateX="10.0">
+                  <font>
+                     <Font name="Dubai Bold" size="25.0" />
+                  </font>
+               </Label>
+            </HBox>
+            <HBox alignment="CENTER" prefHeight="120.0" prefWidth="350.0">
+               <VBox alignment="TOP_CENTER" prefHeight="95.0" prefWidth="275.0">
+                  <Label alignment="TOP_LEFT" text="Home Team" textFill="#023047">
+                     <font>
+                        <Font name="Dubai Bold" size="25.0" />
+                     </font>
+                  </Label>
+                  <ChoiceBox fx:id="homeTeam_cb" onAction="#homeTeamSelect" prefHeight="26.0" prefWidth="250.0" stylesheets="@style.css" />
+               </VBox>
+            </HBox>
+            <HBox alignment="CENTER" prefHeight="120.0" prefWidth="375.0">
+               <VBox alignment="TOP_CENTER" prefHeight="95.0" prefWidth="275.0">
+                  <Label text="Away Team" textFill="#023047">
+                     <font>
+                        <Font name="Dubai Bold" size="25.0" />
+                     </font>
+                  </Label>
+                  <ChoiceBox fx:id="awayTeam_cb" onAction="#awayTeamSelect" prefWidth="250.0" stylesheets="@style.css" />
+               </VBox>
+            </HBox>
+            <HBox alignment="TOP_CENTER" prefHeight="80.0" prefWidth="200.0">
+               <Button fx:id="calculate_btn" mnemonicParsing="false" onAction="#calculate" prefHeight="47.0" prefWidth="162.0" style="-fx-background-color: #219ebc;" text="Game Details" textFill="#023047">
+                  <font>
+                     <Font name="Dubai Bold" size="18.0" />
+                  </font>
+                  <graphic>
+                     <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true" translateX="-10.0">
+                        <Image url="@budget.png" />
+                     </ImageView>
+                  </graphic>
+               </Button>
+            </HBox>
+         </VBox>
+      </left>
+      <right>
+         <VBox prefHeight="380.0" prefWidth="372.0" BorderPane.alignment="CENTER">
+            <TabPane prefHeight="381.0" prefWidth="372.0" stylesheets="@style.css" tabClosingPolicy="UNAVAILABLE">
+               <Tab text="Odds">
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="380.0" prefWidth="200.0">
+                     <HBox prefHeight="35.0" prefWidth="372.0">
+                        <Label text="Odds" textFill="#023047" translateX="2.0">
+                           <font>
+                              <Font name="Dubai Bold" size="25.0" />
+                           </font>
+                        </Label>
+                     </HBox>
+                     <VBox layoutY="44.0" prefHeight="306.0" prefWidth="371.0">
+                        <HBox alignment="TOP_CENTER" prefHeight="20.0" prefWidth="371.0" translateX="-5.0">
+                           <Label fx:id="home_lb" text="Home" textFill="#023047">
+                              <font>
+                                 <Font name="Dubai Bold" size="22.0" />
+                              </font>
+                           </Label>
+                        </HBox>
+                        <HBox alignment="CENTER" prefHeight="38.0" prefWidth="371.0" translateX="-5.0">
+                           <Label fx:id="teamOneOdds_lb" text="+0" textFill="#023047">
+                              <font>
+                                 <Font name="Dubai Medium" size="20.0" />
+                              </font>
+                           </Label>
+                           <Label text="\$" textFill="#023047" translateX="25.0">
+                              <font>
+                                 <Font name="Dubai Bold" size="20.0" />
+                              </font>
+                           </Label>
+                           <TextField fx:id="homeWager_tb" onKeyTyped="#setWagerHome" prefHeight="30.0" prefWidth="55.0" stylesheets="@style.css" translateX="28.0">
+                              <font>
+                                 <Font name="Dubai Medium" size="14.0" />
+                              </font>
+                           </TextField>
+                        </HBox>
+                        <HBox alignment="TOP_CENTER" prefHeight="24.0" prefWidth="371.0" translateX="-5.0" translateY="11.0">
+                           <Label fx:id="away_lb" text="Away" textFill="#023047">
+                              <font>
+                                 <Font name="Dubai Bold" size="22.0" />
+                              </font>
+                           </Label>
+                        </HBox>
+                        <HBox alignment="CENTER" prefHeight="52.0" prefWidth="371.0" translateX="-5.0" translateY="5.0">
+                           <Label fx:id="teamTwoOdds_lb" text="-0" textFill="#023047">
+                              <font>
+                                 <Font name="Dubai Medium" size="20.0" />
+                              </font>
+                           </Label>
+                           <Label text="\$" textFill="#023047" translateX="25.0">
+                              <font>
+                                 <Font name="Dubai Bold" size="20.0" />
+                              </font>
+                           </Label>
+                           <TextField fx:id="awayWager_tb" onKeyTyped="#setWagerAway" prefHeight="30.0" prefWidth="55.0" stylesheets="@style.css" translateX="28.0">
+                              <font>
+                                 <Font name="Dubai Medium" size="14.0" />
+                              </font></TextField>
+                        </HBox>
+                        <HBox alignment="CENTER" prefHeight="50.0" prefWidth="371.0" translateY="10.0">
+                           <Button fx:id="calculateWager_btn" mnemonicParsing="false" onAction="#calculateWager" prefHeight="44.0" prefWidth="106.0" style="-fx-background-color: #219ebc;" text="Calculate" textFill="#023047">
+                              <font>
+                                 <Font name="Dubai Bold" size="18.0" />
+                              </font>
+                           </Button>
+                        </HBox>
+                        <HBox alignment="CENTER_LEFT" prefHeight="46.0" prefWidth="371.0" translateY="18.0">
+                           <Label text="Payout:" textFill="#023047">
+                              <font>
+                                 <Font name="Dubai Bold" size="24.0" />
+                              </font>
+                           </Label>
+                           <Label fx:id="payout_lb" textFill="#023047" translateX="10.0" translateY="1.0">
+                              <font>
+                                 <Font name="Dubai Medium" size="20.0" />
+                              </font>
+                           </Label>
+                        </HBox>
+                     </VBox>
+                  </AnchorPane>
+               </Tab>
+               <Tab text="Statistics">
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <VBox layoutY="40.0" prefHeight="308.0" prefWidth="371.0">
+                        <ScrollPane prefHeight="157.0" prefWidth="371.0">
+                           <TextFlow fx:id="printedStatsBox" prefHeight="254.0" prefWidth="353.0" style="-fx-background-color: #8ecae6;" />
+                        </ScrollPane>
+                        <ScrollPane prefHeight="157.0" prefWidth="371.0">
+                           <TextFlow fx:id="printedStatsBox1" prefHeight="254.0" prefWidth="353.0" style="-fx-background-color: #8ecae6;" />
+                        </ScrollPane>
+                     </VBox>
+                     <HBox prefHeight="39.0" prefWidth="372.0" translateX="2.0">
+                        <Label text="Statistics" textFill="#023047">
+                           <font>
+                              <Font name="Dubai Bold" size="25.0" />
+                           </font>
+                        </Label>
+                        <HBox alignment="CENTER_RIGHT" prefHeight="44.0" prefWidth="264.0">
+                           <Button mnemonicParsing="false" onAction="#setStatistics" style="-fx-background-color: #219ebc;" text="Set Stats" textFill="#023047" translateX="-5.0">
+                              <font>
+                                 <Font name="Dubai Bold" size="13.0" />
+                              </font>
+                           </Button>
+                           <Button mnemonicParsing="false" onAction="#refreshStatistics" style="-fx-background-color: #219ebc;">
+                              <graphic>
+                                 <ImageView fitHeight="21.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                                    <Image url="@refresh.png" />
+                                 </ImageView>
+                              </graphic>
+                           </Button>
+                        </HBox>
+                     </HBox>
+                  </AnchorPane>
+               </Tab>
+            </TabPane>
+         </VBox>
+      </right>
+      <center>
+         <Separator orientation="VERTICAL" prefHeight="200.0" BorderPane.alignment="CENTER" />
+      </center>
+   </BorderPane>
+</Pane>

@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #8ecae6;"
+            xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="edu.bsu.cs222.perfectbet.Controller.StatisticsController">
+   <Button fx:id="save_btn" layoutX="243.0" layoutY="348.0" mnemonicParsing="false" onAction="#onSaveClick"
+           style="-fx-background-color: #219ebc;" text="Save Selection" textFill="#023047">
+      <font>
+         <Font name="Dubai Bold" size="15.0"/>
+      </font>
+      <graphic>
+         <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+            <Image url="@save.png"/>
+         </ImageView>
+      </graphic>
+   </Button>
+   <GridPane layoutX="9.0" layoutY="58.0" prefHeight="284.0" prefWidth="582.0">
+      <columnConstraints>
+         <ColumnConstraints halignment="LEFT" hgrow="SOMETIMES" maxWidth="193.0" minWidth="10.0" prefWidth="190.0"/>
+         <ColumnConstraints halignment="LEFT" hgrow="SOMETIMES" maxWidth="235.4" minWidth="10.0"
+                            prefWidth="207.99999999999997"/>
+         <ColumnConstraints halignment="LEFT" hgrow="SOMETIMES" maxWidth="205.79999999999995" minWidth="10.0"
+                            prefWidth="182.0"/>
+      </columnConstraints>
+      <rowConstraints>
+         <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES"/>
+         <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES"/>
+         <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES"/>
+         <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES"/>
+      </rowConstraints>
+      <CheckBox fx:id="cb_1" mnemonicParsing="false" prefHeight="28.0" prefWidth="184.0" text="Completions"
+                textFill="#023047">
+         <font>
+            <Font name="Dubai Bold" size="15.0"/>
+         </font>
+      </CheckBox>
+      <CheckBox fx:id="cb_5" mnemonicParsing="false" prefHeight="28.0" prefWidth="194.0" text="Field Goal Pct"
+                textFill="#023047" GridPane.columnIndex="1">
+         <font>
+            <Font name="Dubai Bold" size="15.0"/>
+         </font>
+      </CheckBox>
+      <CheckBox fx:id="cb_9" mnemonicParsing="false" prefHeight="28.0" prefWidth="180.0" text="Total Points Per Game"
+                textFill="#023047" GridPane.columnIndex="2">
+         <font>
+            <Font name="Dubai Bold" size="15.0"/>
+         </font>
+      </CheckBox>
+      <CheckBox fx:id="cb_2" mnemonicParsing="false" prefHeight="28.0" prefWidth="184.0" text="Interceptions Thrown"
+                textFill="#023047" GridPane.rowIndex="1">
+         <font>
+            <Font name="Dubai Bold" size="15.0"/>
+         </font>
+      </CheckBox>
+      <CheckBox fx:id="cb_6" mnemonicParsing="false" prefHeight="28.0" prefWidth="201.0" text="Redzone Scoring Pct"
+                textFill="#023047" GridPane.columnIndex="1" GridPane.rowIndex="1">
+         <font>
+            <Font name="Dubai Bold" size="15.0"/>
+         </font>
+      </CheckBox>
+      <CheckBox fx:id="cb_10" mnemonicParsing="false" prefHeight="28.0" prefWidth="176.0" text="Total Sacks"
+                textFill="#023047" GridPane.columnIndex="2" GridPane.rowIndex="1">
+         <font>
+            <Font name="Dubai Bold" size="15.0"/>
+         </font>
+      </CheckBox>
+      <CheckBox fx:id="cb_3" mnemonicParsing="false" prefHeight="28.0" prefWidth="181.0" text="Fumbles"
+                textFill="#023047" GridPane.rowIndex="2">
+         <font>
+            <Font name="Dubai Bold" size="15.0"/>
+         </font>
+      </CheckBox>
+      <CheckBox fx:id="cb_7" mnemonicParsing="false" prefHeight="28.0" prefWidth="203.0"
+                text="Passing Yards Per Game" textFill="#023047" GridPane.columnIndex="1" GridPane.rowIndex="2">
+         <font>
+            <Font name="Dubai Bold" size="15.0"/>
+         </font>
+      </CheckBox>
+      <CheckBox fx:id="cb_11" mnemonicParsing="false" prefHeight="28.0" prefWidth="176.0" text="Assist Tackles"
+                textFill="#023047" GridPane.columnIndex="2" GridPane.rowIndex="2">
+         <font>
+            <Font name="Dubai Bold" size="15.0"/>
+         </font>
+      </CheckBox>
+      <CheckBox fx:id="cb_4" mnemonicParsing="false" prefHeight="28.0" prefWidth="182.0" text="Total Touchdowns"
+                textFill="#023047" GridPane.rowIndex="3">
+         <font>
+            <Font name="Dubai Bold" size="15.0"/>
+         </font>
+      </CheckBox>
+      <CheckBox fx:id="cb_8" mnemonicParsing="false" prefHeight="28.0" prefWidth="203.0"
+                text="Rushing Yards Per Game" textFill="#023047" GridPane.columnIndex="1" GridPane.rowIndex="3">
+         <font>
+            <Font name="Dubai Bold" size="15.0"/>
+         </font>
+      </CheckBox>
+      <CheckBox fx:id="cb_12" mnemonicParsing="false" prefHeight="28.0" prefWidth="175.0" text="Passes Defended"
+                textFill="#023047" GridPane.columnIndex="2" GridPane.rowIndex="3">
+         <font>
+            <Font name="Dubai Bold" size="15.0"/>
+         </font>
+      </CheckBox>
+   </GridPane>
+   <Label layoutX="194.0" layoutY="14.0" text="Statistics Selection" textFill="#023047">
+      <font>
+         <Font name="Dubai Bold" size="25.0"/>
+      </font>
+   </Label>
+</AnchorPane>

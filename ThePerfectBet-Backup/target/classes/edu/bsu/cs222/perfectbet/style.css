@@ -1,0 +1,46 @@
+
+.separator *.line {
+    -fx-border-style: solid;
+    -fx-border-width: 0 0 2 0; /* its make really one-pixel-border */
+    -fx-border-color: #023047;
+}
+
+
+.tab {
+    -fx-font: 16px "Dubai Bold";
+    -fx-padding: 0 3 5 3;
+    -fx-alignment: CENTER;
+    -fx-background-color:    #8ecae6;
+}
+
+.tab:selected {
+    -fx-background-color:   #219ebc;
+}
+
+.choice-box {
+    -fx-font: 15px "Arial";
+    -fx-background-color: #219ebc;
+    -fx-mark-color: #ddeff8;
+}
+
+.choice-box > .label {
+    -fx-text-fill: #023047;
+}
+
+.choice-box .context-menu {
+    -fx-background-color: #219ebc;
+}
+
+.choice-box .menu-item:focused {
+    -fx-background-color:  #8ecae6;
+}
+
+.choice-box .menu-item > .label {
+    -fx-text-fill: #023047;
+}
+
+.text-field {
+    -fx-padding: 0 0 0 2;
+    -fx-background-color: #ddeff8;
+}
+
